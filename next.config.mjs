@@ -7,6 +7,19 @@
 !process.env.SKIP_ENV_VALIDATION && (await import("./src/env.mjs"));
 
 /** @type {import("next").NextConfig} */
+module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "source.unsplash.com",
+        port: "",
+        pathname: "/random/**",
+      },
+    ],
+  },
+};
+
 const config = {
   reactStrictMode: true,
 
